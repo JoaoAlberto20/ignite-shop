@@ -99,10 +99,6 @@ export const ButtonFinishCart = styled('button', {
   borderRadius:  8,
   background: '$green500',
   transition: '0.2s',
-  
-  '&:hover': {
-    backgroundColor: '$green300',
-  },
 
   '&:disabled': {
     cursor: 'not-allowed',
