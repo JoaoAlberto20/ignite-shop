@@ -3,18 +3,25 @@ import { styled } from "..";
 export const HomeContainer = styled('main', {
   display: 'flex',
   width: '100%',
-  maxWidth: 'calc(100vw - ((100vw - 1180px) / 2))',
+  maxWidth: "calc(100vw - ((100vw - 1180px) / 2))",
   marginLeft: 'auto',
-  minHeight: 656,
+  overflow: 'hidden'
 })
 
-export const Product = styled('div', {
+export const SliderContainer = styled('div', {
+  display: 'flex',
+  gap: '3rem',
+})
+
+export const Product = styled('a', {
   background: 'linear-gradient(180deg, #1ea483 0%,  #7465d4 100%)',
   borderRadius: 8,
   padding: '0.25rem',
   cursor: 'pointer',
   position: 'relative',
-  overflow: 'hidden',
+  width: '100%',
+  minWidth: "43.5rem",
+  minHeight: 656,
 
   display: 'flex',
   alignItems: 'center',
@@ -42,17 +49,43 @@ export const Product = styled('div', {
     opacity: 0,
     transition: 'all 0.2s ease-in-out',
 
-
-    strong: {
-      fontSize: '$lg',
-      color:"$gray100"
+    div: {
+      strong: {
+        fontSize: '$lg',
+        color:"$gray100"
+      },
+  
+      span: {
+        fontSize: '$xl',
+        fontWeight: 'bold',
+        color: '$green300',
+        display: 'block',
+      },
     },
 
-    span: {
-      fontSize: '$xl',
-      fontWeight: 'bold',
-      color: '$green300',
-    },
+    button: {
+      borderRadius: 6,
+      border: 0,
+      background: '$green500',
+      padding: 12,
+      height: 56,
+      width: 56,
+      display: "flex",
+      alignItems: 'center',
+      justifyContent: 'center',
+      color: '$Withe',
+      transition: '0.2s',
+      cursor: 'pointer',
+    
+      svg: {
+        height: 24,
+        width: 24, 
+      },
+
+      '&:hover': {
+        backgroundColor: '$green300',
+      }
+    }
   },
 
   '&:hover': {
