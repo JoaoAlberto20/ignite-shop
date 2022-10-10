@@ -25,7 +25,10 @@ export default function Product({ product }: ProductsProps) {
     try {
       serIsCreatingCheckoutSession(true)
       const response = await axios.post('/api/checkout', {
-        priceId: product.defaultPriceId
+        products: [{
+          ...product,
+          quantity: 1
+        }],
       })
       const { checkoutUrl } = response.data
       window.location.href = checkoutUrl;
@@ -58,7 +61,12 @@ export default function Product({ product }: ProductsProps) {
 
           <p>{product.description}</p>
 
-          <button onClick={handleBuyProduct}>Comprar Agora</button>
+          <button
+            onClick={handleBuyProduct}
+            disabled={isCreatingCheckoutSession}
+          >
+            Comprar Agora
+          </button>
         </ProductDetail>
       </ProductContainer>
     </>

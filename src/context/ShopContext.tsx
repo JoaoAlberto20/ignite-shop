@@ -12,7 +12,6 @@ export interface IProduct {
   quantity?: number, 
 }
 
-console.log('test');
 
 interface ShopContextProps {
   addCart: (product: IProduct) => void
